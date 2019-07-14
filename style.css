@@ -1,0 +1,675 @@
+html, body {
+    font-size-adjust: 100%;
+    -webkit-font-size-adjust: 100%;
+    -moz-font-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
+    font-family: 'Sailec-Regular', sans-serif;
+    margin: 0;
+}
+
+h1, h2, h3, h4, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+
+@font-face {
+    font-family: 'cred-icon';
+    src: url(assets/fonts/cred-icon/cred-icon.eot);
+    src: url(assets/fonts/cred-icon/cred-icon-iefix.eot) format("embedded-opentype"),
+    url(assets/fonts/cred-icon/cred-icon2.ttf) format("truetype"),
+    url(assets/fonts/cred-icon/cred-icon.woff) format("woff"),
+    url(assets/fonts/cred-icon/cred-icon.svg#cred-icon) format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Sailec-Bold';
+    src: url(assets/fonts/Sailec-Bold/sailec-bold.eot);
+    src: url(assets/fonts/Sailec-Bold/sailec-bold-iefix.eot) format("embedded-opentype"),
+    url(assets/fonts/Sailec-Bold/sailec-bold.ttf) format("truetype"),
+    url(assets/fonts/Sailec-Bold/sailec-bold.woff) format("woff"),
+    url(assets/fonts/Sailec-Bold/sailec-bold.woff2) format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Sailec-Medium';
+    src: url(assets/fonts/Sailec-Medium/sailec-medium.eot);
+    src: url(assets/fonts/Sailec-Medium/sailec-medium-iefix.eot?#iefix) format("embedded-opentype"),
+    url(assets/fonts/Sailec-Medium/sailec-medium.ttf) format("truetype"),
+    url(assets/fonts/Sailec-Medium/sailec-medium.woff) format("woff"),
+    url(assets/fonts/Sailec-Medium/sailec-medium.woff2) format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Sailec-Regular';
+    src: url(https://cdn.credible.com/marketing-fe/assets/sailec-regular.eot);
+    src: url(https://cdn.credible.com/marketing-fe/assets/sailec-regular-iefix.eot?#iefix) format("embedded-opentype"),
+    url(https://cdn.credible.com/marketing-fe/assets/sailec-regular.ttf) format("truetype"),
+    url(https://cdn.credible.com/marketing-fe/assets/sailec-regular.woff) format("woff"),
+    url(https://cdn.credible.com/marketing-fe/assets/sailec-regular.woff2) format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.nav {
+    padding-right: 7px;
+    border-radius: 0;
+    margin: 0;
+    border: none;
+    height: 44px;
+    min-height: 44px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px 0 rgba(181, 191, 199, 0.3);
+    z-index: 1000;
+    position: relative;
+    -webkit-transition: background-color .3s ease-in-out, height .3s ease-in-out, box-shadow .3s ease-in-out;
+    transition: background-color .3s ease-in-out, height .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+.nav--container {
+    width: 100%;
+    text-align: center;
+}
+
+.logo {
+    padding: 0;
+    width: 101px;
+    height: 23px;
+    /*background-image: url();*/
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin: 11px auto;
+    background-size: 101px;
+    -webkit-transition: margin .3s ease-in-out;
+    transition: margin .3s ease-in-out;
+}
+
+.section-header {
+    font-size: 30px;
+    font-weight: 400;
+    color: #555;
+    padding: 30px 0 24px;
+    text-align: center;
+}
+.hero{
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(assets/images/hero.jpg);
+}
+.hero--values {
+    height: 235px;
+    width: 100%;
+    color: #fff;
+    padding: 35px 0 0 ;
+    text-align: center;
+}
+.hero--title{
+    font-size: 31px;
+    letter-spacing: -0.4px;
+    line-height: 1.06;
+    font-weight: 300;
+}
+
+.hero--title p{
+    font-weight: 700;
+}
+
+.hero--items{
+    display: table;
+    margin: 25px auto 20px;
+    list-style: none;
+    text-align: left;
+    padding: 0;
+}
+.hero--items li {
+    list-style: none;
+    font-size: 16px;
+    letter-spacing: .5px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+i {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'cred-icon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.icon-check-circle:before {
+    content: "\E913";
+}
+
+.icon-thumb-up:before {
+    content: "\E8DC";
+}
+.icon-favorite:before {
+    content: "\E87D";
+}
+.icon-chevron-right:before {
+    content: "\E922"; }
+
+.hero--link {
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    display: inline-block;
+}
+
+.popup {
+    position: absolute;
+    top: 15px; /*must overlap parent element otherwise pop-up doesn't stay open when rolloing over '*/
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 8px;
+    left: 0;
+    max-width: 240px;
+    min-width: 180px;
+    z-index: 100;
+    display: none;
+}
+
+#lt {
+    left: 0;
+    top: 0;
+    background: #FCC;
+}
+#rt {
+    right: 0;
+    top: 0;
+    background: #CFC;
+}
+#lb {
+    left: 0;
+    bottom: 0;
+    background: #CCF;
+}
+#rb {
+    right: 0;
+    bottom: 0;
+    background: #CFF;
+}
+#cm {
+    margin: auto;
+    margin-top: -35px;
+    left: 0;
+    right: 0;
+    top: 50%;
+    background: #CFF;
+}
+.brick {
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 50px;
+    line-height: 30px;
+    text-align: center;
+}
+#tooltip {
+    opacity: 0;
+    text-align: left;
+    color: #222222;
+    background: #fff;
+    position: absolute;
+    z-index: 100;
+    padding: 15px;
+    pointer-events: none;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    box-shadow: 2px 2px 6px #cccccc;
+}
+#tooltip.top {
+    margin-top: 20px;
+}
+#tooltip.show {
+    opacity: 1;
+    margin-top: 10px;
+    pointer-events: all;
+}
+#tooltip.show.top {
+    margin-top: 10px;
+}
+#tooltip:after {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid rgba(255, 255, 255, 1);
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    margin-left: -10px;
+}
+#tooltip.top:after {
+    border-top-color: transparent;
+    border-bottom: 10px solid rgba(255, 255, 255, 1);
+    top: -20px;
+    bottom: auto;
+}
+#tooltip.left:after {
+    left: 10px;
+    margin: 0;
+}
+#tooltip.right:after {
+    right: 10px;
+    left: auto;
+    margin: 0;
+}
+
+
+.accordion {
+
+}
+
+
+
+.close .accordionItemContent{
+    height:0px;
+    -webkit-transition: height 1s ease-out;
+    transition:height 1s ease-out;
+    -webkit-transform: scaleY(0);
+    -ms-transform: scaleY(0);
+    transform: scaleY(0);
+    display:block;
+}
+.active .accordionItemContent{
+    height:auto !important;
+    display:block;
+    -webkit-transform: scaleY(1);
+    -ms-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: top;
+    -ms-transform-origin: top;
+    transform-origin: top;
+
+    -webkit-transition: -webkit-transform 0.4s ease-out;
+    -webkit-transition: -webkit-transform 0.4s ease;
+    transition: -webkit-transform 0.4s ease;
+    transition: transform 0.4s ease;
+    transition: transform 0.4s ease, -webkit-transform 0.4s ease;
+    box-sizing: border-box;
+}
+
+
+
+.cred-accordion {
+    position: relative;
+    box-shadow: 0px 5px 6px #2e2e2e6e;
+}
+
+.cred-accordion .panel {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    border-radius: 0;
+    border: 1px solid #dcdcdc;
+    border-bottom: none;
+    background-color: transparent;
+    margin-bottom: 0;
+}
+
+.cred-accordion .panel input {
+    color: rgba(0, 0, 0, 0.65);
+}
+
+.cred-accordion .panel:first-child {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.cred-accordion .panel:last-child {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.cred-accordion .panel .panel-title {
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    color: #4a4a4a;
+    cursor: pointer;
+    display: block;
+    font-size: 17px;
+    font-weight: 800;
+    line-height: 1.35;
+    letter-spacing: -0.6px;
+    position: relative;
+    padding: 25px 0 25px 60px;
+    text-decoration: none;
+}
+
+.cred-accordion .panel .panel-title:hover, .cred-accordion .panel .panel-title:focus {
+    text-decoration: none;
+}
+
+.cred-accordion .panel .panel-title:after {
+    content: '\E920';
+    font-family: 'cred-icon';
+    right: 15px;
+    top: 23px;
+    color: #4099d3;
+    font-size: 22px;
+    position: absolute;
+}
+
+.cred-accordion .panel .panel-title[aria-expanded='true']:after {
+    content: '\E923';
+}
+
+.cred-accordion .panel-content {
+    padding-bottom: 15px;
+}
+
+.cred-accordion .panel.active .panel-content {
+    display: block;
+}
+
+.cred-accordion .panel.active .panel-title:after {
+    content: '\E923';
+}
+
+.cred-accordion .panel.active,
+.cred-accordion .panel.active .panel-title,
+.cred-accordion .panel.active .panel-content {
+    background-color: #f5f8fb;
+}
+
+
+.refinance{
+    background-image: url(assets/images/accordion/refi-blue.png);
+}
+
+.personal{
+    background-image: url(assets/images/accordion/personal-blue.png);
+}
+
+.mortgages{
+    background-image: url(assets/images/accordion/mortgage-key.png);
+}
+.mortgage{
+    background-image: url(assets/images/accordion/mortgage-blue.png);
+}
+.inschool{
+    background-image: url(assets/images/accordion/inschool-blue.png);
+}
+
+.credit-cards{
+    background-image: url(assets/images/accordion/credit-cards-blue.png);
+}
+
+li:focus {
+    outline: none;
+}
+
+
+
+.cred-accordion .panel .panel-title:after {
+    content: '\E920';
+    font-family: 'cred-icon';
+    right: 15px;
+    top: 23px;
+    color: #4099d3;
+    font-size: 22px;
+    position: absolute;
+}
+
+.table--wrap{
+    padding: 0 10px;
+}
+.table--wrap.row{
+    padding: 10px 0 ;
+}
+.table-rounded {
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: .25em;
+}
+.table {
+    width: 100%;
+    max-width: 100%;
+    font-size: 12px;
+    border: none;
+    background: 0 0;
+    text-align: left;
+    float: none!important;
+}
+table.table-border-top thead th {
+    color: #40aa8e;
+    background-color: #f7f9f9;
+}
+
+
+.tablepress tfoot th,
+.tablepress thead th {
+    background-color: #eee;
+    font-weight: 700;
+    vertical-align: middle;
+}
+
+
+.tablepress thead th  {
+    background-color: #eee;
+    color: #555;
+    font-size: 16px;
+
+}
+.tablepress thead th:first-child{
+    padding: 0 15px;
+}
+
+
+.tablepress thead th {
+    background-color: #eee;
+    color: #222;
+    font-size: 14px;
+
+}
+
+
+.tablepress tbody td {
+    font-family: open sans,sans-serif;
+    font-size: 14px;
+    color: #222;
+    border-top: 1px solid #cfd1d3;
+    padding: 10px;
+}
+
+.tablepress .row {
+    width: 100%;
+}
+.row--header{
+    /*line-height: 50px;*/
+}
+.tablepress .column {
+    width: 33.33%;
+    position: relative;
+    padding: 25px 0;
+}
+
+
+.tablepress .lender-name {
+    color: #686868;
+    font-size: 16px;
+}
+
+.tablepress button a {
+    color: #fff;
+}
+
+.tablepress button {
+    background-color: #5cc1a7;
+    font-weight: 700;
+    width: 90px;
+}
+
+
+table.table-border-top,
+table.table-border-top.table-bordered {
+    border-top: .25em solid #5cc1a7;
+}
+.table-rounded thead:first-child {
+    border-radius: .25em .25em 0 0;
+}
+
+
+
+.free-to-use{
+    background-image: url(assets/images/credible/free-to-use.png) ;
+}
+.one-form{
+    background-image: url(assets/images/credible/one-form.png) ;
+}
+
+.broader-options{
+    background-image: url(assets/images/credible/broader-options.png) ;
+}
+
+.secure{
+    background-image: url(assets/images/credible/secure.png) ;
+}
+
+.section-why-credible{
+    text-align: center;
+}
+.section-header {
+    color: #555;
+    padding: 30px 0 24px;
+    text-align: center;
+}
+.section-why-credible li span {
+    font-size: 22px;
+    font-weight: 600;
+    color: #616161;
+}
+
+.section-why-credible ul {
+    color: #fff;
+    list-style: none;
+    padding-left: 0;
+}
+
+.section-why-credible li {
+    background-position: center 25px;
+    background-size: auto;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    padding: 115px 20px 15px;
+    text-align: center;
+    vertical-align: top;
+    width: 280px;
+}
+
+.section-why-credible li span {
+    font-size: 22px;
+    font-weight: 600;
+    color: #616161;
+}
+
+.section-why-credible li p {
+    font-size: 18px;
+    font-weight: normal;
+    color: #555555;
+    margin: 10px 0;
+    opacity: .6;
+}
+
+
+.lenders{
+
+}
+
+.refi{
+    background-image: url(assets/images/lenders/refi.png) ;
+}
+.student{
+    background-image: url(assets/images/lenders/student-loan.png) ;
+}
+
+.credit{
+    background-image: url(assets/images/lenders/credit-cards.png) ;
+}
+
+.lenders-personal{
+    background-image: url(assets/images/lenders/personal-loan.png) ;
+}
+.lenders ul{
+    color: #fff;
+    list-style: none;
+    padding-left: 0;
+}
+.lenders--title-wrap{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.lenders--title {
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #555555;
+    text-transform: capitalize;
+
+}
+
+.lenders ul li {
+    border: 1px solid #5cc1a7;
+    border-radius: 4px;
+    background-color: #ffffff;
+    background-position: center 25px;
+    background-repeat: no-repeat;
+    color: #555;
+    margin: 10px auto 15px;
+    text-align: center;
+    padding-top: 100px;
+    width: 288px;
+}
+
+.lenders  article {
+    font-size: 16px;
+    line-height: 24px;
+    padding: 0 15px 35px;
+}
+
+.lenders a {
+    cursor: pointer;
+}
+.lenders--link{
+    background-color: #5cc1a7;
+    color: #fff;
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 50px;
+    width: 100%;
+    text-decoration: none;
+
+}
+
+.footer{
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+    background-color: #3390d3;
+    color: #Fff;
+    box-shadow: 0px -2px 1px #2e2e2e4d;
+}
